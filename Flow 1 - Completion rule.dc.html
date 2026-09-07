@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/tokens/colors.css">
+<link rel="stylesheet" href="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/tokens/typography.css">
+<link rel="stylesheet" href="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<script src="_ds/whatfix-navi-design-system-46013fa2-827f-4201-84da-028ef46766d0/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--surface-subtle); font-family: var(--font-sans); }
+  a { color: var(--text-link); }
+  a:hover { color: var(--text-link-hover); }
+  @keyframes hotspotPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(199,73,0,0.35); } 50% { box-shadow: 0 0 0 6px rgba(199,73,0,0); } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: fit-content; padding: 28px 24px 56px; box-sizing: border-box; background: var(--surface-subtle);">
+
+  <div style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; padding: 4px; box-sizing: border-box; width: fit-content; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); box-shadow: var(--elevation-01);">
+    <span style="display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 18px; border-radius: var(--radius-full); background: var(--color-primary-400); color: var(--color-white); font: var(--font-weight-semibold) 0.875rem/1 var(--font-sans);">
+      <i class="ti ti-circle-check" style="font-size: 17px;"></i>Flow 1 · Overflow menu
+    </span>
+    <a href="Flow 2 - Completion rules tab.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 18px; border-radius: var(--radius-full); color: var(--text-secondary); font: var(--font-weight-semibold) 0.875rem/1 var(--font-sans); text-decoration: none;" style-hover="background: var(--surface-hover); color: var(--text-primary);">
+      <i class="ti ti-layout-navbar" style="font-size: 17px;"></i>Flow 2 · Completion rules tab
+    </a>
+  </div>
+
+  <div style="width: 1280px; flex-shrink: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span style="font: var(--font-weight-semibold) 0.6875rem/1 var(--font-sans); letter-spacing: 0.03em; text-transform: uppercase; color: var(--color-primary-400);">Flow 1 · existing path, new rule</span>
+      <span style="font: var(--font-weight-bold) 1.375rem/1.2 var(--font-sans); letter-spacing: -0.01em; color: var(--text-primary);">Define a screen completion rule</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <button type="button" onClick="{{ back }}" style="display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 1px solid var(--border-default); border-radius: var(--radius-small); background: var(--surface-card); color: var(--text-secondary); font: var(--font-weight-medium) 0.8125rem/1 var(--font-sans); cursor: pointer;"><i class="ti ti-arrow-left" style="font-size: 16px;"></i>Back</button>
+      <button type="button" onClick="{{ next }}" style="display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 1px solid var(--border-default); border-radius: var(--radius-small); background: var(--surface-card); color: var(--text-secondary); font: var(--font-weight-medium) 0.8125rem/1 var(--font-sans); cursor: pointer;">Next<i class="ti ti-arrow-right" style="font-size: 16px;"></i></button>
+    </div>
+  </div>
+
+  <div style="position: relative; width: 1280px; height: 800px; flex-shrink: 0; border-radius: var(--radius-large); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--elevation-04); background: var(--surface-card);" hint-placeholder-val="{{ true }}">
+
+    <sc-if value="{{ isStudio }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; inset: 0; display: flex; background: var(--surface-page);">
+
+        <div style="width: 232px; flex-shrink: 0; background: var(--surface-nav); display: flex; flex-direction: column; padding: 18px 14px; box-sizing: border-box; gap: 18px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="width: 26px; height: 26px; border-radius: 6px; background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.75rem/1 var(--font-sans);">M</span>
+              <span style="font: var(--font-weight-semibold) 1rem/1 var(--font-sans); color: #fff;">Mirror</span>
+            </div>
+            <i class="ti ti-apps" style="font-size: 18px; color: var(--color-secondary-400);"></i>
+          </div>
+          <div style="height: 1px; background: rgba(255,255,255,0.09);"></div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 8px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="ti ti-topology-star-3" style="font-size: 18px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-medium) 0.875rem/1 var(--font-sans); color: #fff;">shashi_locale</span>
+            </div>
+            <i class="ti ti-selector" style="font-size: 16px; color: var(--color-secondary-400);"></i>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: var(--radius-small); background: rgba(255,255,255,0.08);">
+              <i class="ti ti-layout-grid" style="font-size: 18px; color: var(--color-orange-300);"></i>
+              <span style="font: var(--font-weight-semibold) 0.875rem/1 var(--font-sans); color: #fff;">Workflows</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: var(--radius-small);">
+              <i class="ti ti-chart-bar" style="font-size: 18px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--color-secondary-300);">Analytics</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: var(--radius-small);">
+              <i class="ti ti-settings" style="font-size: 18px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--color-secondary-300);">Settings</span>
+            </div>
+          </div>
+          <div style="flex: 1;"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px;">
+              <span style="width: 22px; height: 22px; border-radius: var(--radius-full); background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.6875rem/1 var(--font-sans);">M</span>
+              <span style="font: var(--font-weight-medium) 0.8125rem/1 var(--font-sans); color: #fff;">Mohini Kini</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px;">
+              <i class="ti ti-bell" style="font-size: 17px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-regular) 0.8125rem/1 var(--font-sans); color: var(--color-secondary-300);">Notifications</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px;">
+              <i class="ti ti-book" style="font-size: 17px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-regular) 0.8125rem/1 var(--font-sans); color: var(--color-secondary-300);">Resources</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px;">
+              <i class="ti ti-message-circle" style="font-size: 17px; color: var(--color-secondary-400);"></i>
+              <span style="font: var(--font-weight-regular) 0.8125rem/1 var(--font-sans); color: var(--color-secondary-300);">Chat</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; background: var(--surface-page);">
+          <div style="height: 34px; flex-shrink: 0; background: var(--color-info-400); display: flex; align-items: center; justify-content: center; padding: 0 16px;">
+            <span style="font: var(--font-weight-semibold) 0.8125rem/1 var(--font-sans); color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">QuickRead: your AI-generated summarized responses are now available for everyone!</span>
+          </div>
+          <div style="padding: 22px 24px 0; display: flex; flex-direction: column; gap: 16px; min-height: 0;">
+            <span style="font: var(--font-weight-bold) 1.5rem/1.2 var(--font-sans); letter-spacing: -0.01em; color: var(--text-primary);">Workflows</span>
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+              <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Tabs" tabs="{{ studioTabs }}" value="Draft" hint-size="220px,42px"></x-import>
+              <span style="display: inline-flex; align-items: center; gap: 6px; padding-bottom: 10px; font: var(--font-weight-medium) 0.875rem/1 var(--font-sans); color: var(--color-primary-400);"><i class="ti ti-file-plus" style="font-size: 17px;"></i>Create simulation</span>
+            </div>
+            <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); overflow: hidden;">
+              <div style="display: grid; grid-template-columns: 1fr 96px; align-items: center; gap: 12px; height: 44px; padding: 0 14px; background: var(--surface-sunken); border-bottom: 1px solid var(--border-subtle);">
+                <span style="font: var(--font-weight-semibold) 0.75rem/1 var(--font-sans); letter-spacing: 0.03em; text-transform: uppercase; color: var(--text-tertiary);">Name</span>
+                <span style="font: var(--font-weight-semibold) 0.75rem/1 var(--font-sans); letter-spacing: 0.03em; text-transform: uppercase; color: var(--text-tertiary);">Type</span>
+              </div>
+              <sc-for list="{{ workflowRows }}" as="row" hint-placeholder-count="6">
+                <div style="display: grid; grid-template-columns: 1fr 96px; align-items: center; gap: 12px; height: 46px; padding: 0 14px; border-bottom: 1px solid var(--border-subtle); background: {{ row.bg }}; box-shadow: {{ row.mark }};">
+                  <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                    <i class="ti ti-square-toggle-horizontal" style="font-size: 18px; color: var(--color-primary-400);"></i>
+                    <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--text-primary); white-space: nowrap;">{{ row.name }}</span>
+                  </div>
+                  <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--text-secondary);">Workflow</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 48px; flex-shrink: 0; background: var(--surface-nav); display: flex; flex-direction: column; align-items: center; padding: 14px 0; gap: 20px;">
+          <span style="width: 24px; height: 24px; border-radius: 5px; background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.6875rem/1 var(--font-sans);">M</span>
+          <i class="ti ti-topology-star-3" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <i class="ti ti-plus" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <i class="ti ti-zoom-scan" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <span style="flex: 1;"></span>
+          <span style="width: 26px; height: 26px; border-radius: var(--radius-full); background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.75rem/1 var(--font-sans);">M</span>
+        </div>
+
+        <div style="width: 400px; flex-shrink: 0; background: var(--surface-card); border-left: 1px solid var(--border-subtle); display: flex; flex-direction: column;">
+          <div style="height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--border-subtle);">
+            <i class="ti ti-arrow-left" style="font-size: 18px; color: var(--icon-primary);"></i>
+            <span style="flex: 1; font: var(--font-weight-semibold) 1rem/1 var(--font-sans); color: var(--text-primary);">Mirror</span>
+            <i class="ti ti-arrow-bar-to-left" style="font-size: 17px; color: var(--icon-secondary);"></i>
+            <i class="ti ti-minus" style="font-size: 17px; color: var(--icon-secondary);"></i>
+            <i class="ti ti-x" style="font-size: 17px; color: var(--icon-secondary);"></i>
+          </div>
+
+          <sc-if value="{{ s1 }}" hint-placeholder-val="{{ true }}">
+            <div style="flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; padding: 16px; gap: 14px;">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border: 1px dashed var(--color-primary-400); border-radius: var(--radius-medium); color: var(--color-primary-400); font: var(--font-weight-semibold) 0.9375rem/1 var(--font-sans);"><i class="ti ti-viewfinder" style="font-size: 18px;"></i>Start mirroring</div>
+              <div style="display: flex; flex-direction: column;">
+                <sc-for list="{{ panelWorkflows }}" as="wf" hint-placeholder-count="6">
+                  <div onClick="{{ wf.open }}" style="display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 4px; border-bottom: 1px solid var(--border-subtle); cursor: pointer; background: {{ wf.bg }};">
+                    <i class="ti ti-square-toggle-horizontal" style="font-size: 18px; color: var(--color-primary-400);"></i>
+                    <span style="flex: 1; font: var(--font-weight-regular) 0.9375rem/1 var(--font-sans); color: var(--text-primary);">{{ wf.name }}</span>
+                    <i class="ti ti-pencil" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                    <i class="ti ti-trash" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                    <i class="ti ti-chevron-right" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ panelScreens }}">
+            <div style="flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column;">
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="ti ti-square-toggle-horizontal" style="font-size: 20px; color: var(--color-primary-400);"></i>
+                  <div style="flex: 1; height: 40px; border: 1px solid var(--border-default); border-radius: var(--radius-medium); display: flex; align-items: center; padding: 0 12px; font: var(--font-weight-regular) 0.9375rem/1 var(--font-sans); color: var(--text-primary);">Test Capture sync</div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 44px; border: 1px dashed var(--color-primary-400); border-radius: var(--radius-medium); color: var(--color-primary-400); font: var(--font-weight-semibold) 0.9375rem/1 var(--font-sans);"><i class="ti ti-viewfinder" style="font-size: 18px;"></i>Add more screens</div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div style="flex: 1; height: 40px; border: 1px solid var(--border-default); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font: var(--font-weight-regular) 0.9375rem/1 var(--font-sans); color: var(--text-primary);">Default language<i class="ti ti-chevron-down" style="font-size: 17px; color: var(--icon-secondary);"></i></div>
+                  <div style="width: 40px; height: 40px; border: 1px solid var(--border-default); border-radius: var(--radius-medium); display: flex; align-items: center; justify-content: center;"><i class="ti ti-dots-vertical" style="font-size: 18px; color: var(--icon-primary);"></i></div>
+                </div>
+              </div>
+              <div style="flex: 1; min-height: 0; overflow: hidden; padding: 0 16px 16px; display: flex; flex-direction: column; gap: 14px;">
+                <div style="position: relative; border: 1px solid var(--border-subtle); border-radius: var(--radius-large); box-shadow: var(--elevation-01); padding: 12px;">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: var(--radius-small); background: var(--color-secondary-100); display: inline-flex; align-items: center; justify-content: center;"><i class="ti ti-photo" style="font-size: 17px; color: var(--icon-secondary);"></i></span>
+                    <span style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                      <span style="font: var(--font-weight-semibold) 0.9375rem/1 var(--font-sans); color: var(--text-primary);">Screen 5</span>
+                      <span style="font: var(--font-weight-regular) 0.8125rem/1 var(--font-sans); color: var(--text-tertiary);">Untitled</span>
+                    </span>
+                    <i class="ti ti-maximize" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                    <i class="ti ti-dots-vertical" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                  </div>
+                  <div style="margin-top: 10px; height: 132px; border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); overflow: hidden; background: var(--color-brightblue-400);">
+                    <img src="assets/screen-thumb.png" alt="Captured screen 5" style="width: 100%; display: block;">
+                  </div>
+                  <button type="button" onClick="{{ openEditor }}" onMouseEnter="{{ hoverEditOn }}" onMouseLeave="{{ hoverEditOff }}" style="position: absolute; right: 16px; bottom: 14px; width: 38px; height: 38px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); background: var(--surface-card); box-shadow: var(--elevation-02); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; animation: {{ fabPulse }};">
+                    <i class="ti ti-pencil" style="font-size: 18px; color: var(--icon-primary);"></i>
+                  </button>
+                  <sc-if value="{{ hoverEdit }}">
+                    <div style="position: absolute; right: 62px; bottom: 20px; padding: 6px 10px; border-radius: var(--radius-small); background: var(--color-secondary-1000); color: #fff; font: var(--font-weight-medium) 0.8125rem/1 var(--font-sans); box-shadow: var(--elevation-02);">Edit</div>
+                  </sc-if>
+                </div>
+                <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-large); box-shadow: var(--elevation-01); padding: 12px;">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: var(--radius-small); background: var(--color-secondary-100); display: inline-flex; align-items: center; justify-content: center;"><i class="ti ti-photo" style="font-size: 17px; color: var(--icon-secondary);"></i></span>
+                    <span style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                      <span style="font: var(--font-weight-semibold) 0.9375rem/1 var(--font-sans); color: var(--text-primary);">Screen 4</span>
+                      <span style="font: var(--font-weight-regular) 0.8125rem/1 var(--font-sans); color: var(--text-tertiary);">Untitled</span>
+                    </span>
+                    <i class="ti ti-maximize" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                    <i class="ti ti-dots-vertical" style="font-size: 17px; color: var(--icon-secondary);"></i>
+                  </div>
+                  <div style="margin-top: 10px; height: 96px; border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); overflow: hidden; background: var(--color-brightblue-400);">
+                    <img src="assets/screen-thumb.png" alt="Captured screen 4" style="width: 100%; display: block;">
+                  </div>
+                </div>
+              </div>
+              <div style="flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--border-subtle);">
+                <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Button" variant="secondary" intent="neutral" hint-size="90px,40px">Cancel</x-import>
+                <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Button" variant="secondary" intent="primary" hint-size="90px,40px">Preview</x-import>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isEditor }}">
+      <div style="position: absolute; inset: 0; display: flex; background: var(--color-brightblue-400);">
+        <div style="flex: 1; min-width: 0; position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: var(--color-brightblue-400);"></div>
+
+        </div>
+
+        <div style="width: 48px; flex-shrink: 0; background: var(--surface-nav); display: flex; flex-direction: column; align-items: center; padding: 14px 0; gap: 20px;">
+          <span style="width: 24px; height: 24px; border-radius: 5px; background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.6875rem/1 var(--font-sans);">M</span>
+          <i class="ti ti-topology-star-3" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <i class="ti ti-plus" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <i class="ti ti-zoom-scan" style="font-size: 20px; color: var(--color-secondary-300);"></i>
+          <span style="flex: 1;"></span>
+          <span style="width: 26px; height: 26px; border-radius: var(--radius-full); background: var(--color-orange-500); display: inline-flex; align-items: center; justify-content: center; color: #fff; font: var(--font-weight-bold) 0.75rem/1 var(--font-sans);">M</span>
+        </div>
+
+        <sc-if value="{{ editorPanel }}">
+          <div style="width: 400px; flex-shrink: 0; background: var(--surface-card); border-left: 1px solid var(--border-subtle); display: flex; flex-direction: column;">
+            <div style="height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid var(--border-subtle);">
+              <i class="ti ti-arrow-left" style="font-size: 18px; color: var(--icon-primary);"></i>
+              <span style="flex: 1; font: var(--font-weight-semibold) 1rem/1 var(--font-sans); color: var(--text-primary);">{{ panelTitle }}</span>
+              <i class="ti ti-arrow-bar-to-left" style="font-size: 17px; color: var(--icon-secondary);"></i>
+              <i class="ti ti-minus" style="font-size: 17px; color: var(--icon-secondary);"></i>
+              <i class="ti ti-x" style="font-size: 17px; color: var(--icon-secondary);"></i>
+            </div>
+
+            <sc-if value="{{ isEditorCard }}">
+              <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
+                <div style="flex: 1; min-height: 0; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+                  <div style="position: relative; border: 1px solid var(--border-subtle); border-radius: var(--radius-large); box-shadow: var(--elevation-01); padding: 12px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <span style="width: 34px; height: 34px; border-radius: var(--radius-small); background: var(--color-secondary-100); display: inline-flex; align-items: center; justify-content: center;"><i class="ti ti-photo" style="font-size: 18px; color: var(--icon-secondary);"></i></span>
+                      <span style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                        <span style="font: var(--font-weight-semibold) 1rem/1 var(--font-sans); color: var(--text-primary);">Screen 5</span>
+                        <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--text-tertiary);">Untitled</span>
+                      </span>
+                      <button type="button" onClick="{{ toggleMenu }}" style="width: 34px; height: 34px; border-radius: var(--radius-full); border: none; background: {{ overflowBg }}; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; animation: {{ overflowPulse }};">
+                        <i class="ti ti-dots" style="font-size: 19px; color: {{ overflowFg }};"></i>
+                      </button>
+                    </div>
+                    <div style="margin-top: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); overflow: hidden; background: var(--color-brightblue-400);">
+                      <img src="assets/screen-thumb.png" alt="Captured screen 5" style="width: 100%; display: block;">
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; padding-top: 8px;">
+                      <i class="ti ti-maximize" style="font-size: 18px; color: var(--icon-secondary);"></i>
+                    </div>
+
+                    <sc-if value="{{ menuOpen }}">
+                      <div style="position: absolute; right: 12px; top: 52px; z-index: 2; width: 244px; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); box-shadow: var(--elevation-03); padding: 6px; display: flex; flex-direction: column; gap: 2px;">
+                        <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: var(--radius-small);">
+                          <i class="ti ti-link" style="font-size: 18px; color: var(--icon-primary);"></i>
+                          <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--text-primary);">Add link</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: var(--radius-small);">
+                          <i class="ti ti-pencil" style="font-size: 18px; color: var(--icon-primary);"></i>
+                          <span style="font: var(--font-weight-regular) 0.875rem/1 var(--font-sans); color: var(--text-primary);">Edit</span>
+                        </div>
+                        <div style="height: 1px; background: var(--border-subtle); margin: 4px 0;"></div>
+                        <button type="button" onClick="{{ openRule }}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border: none; border-radius: var(--radius-small); background: var(--color-primary-50); cursor: pointer; text-align: left;">
+                          <i class="ti ti-circle-check" style="font-size: 18px; color: var(--color-primary-400);"></i>
+                          <span style="flex: 1; font: var(--font-weight-medium) 0.875rem/1 var(--font-sans); color: var(--color-primary-500);">{{ ruleLabel }}</span>
+                          <sc-if value="{{ markNew }}">
+                            <span style="padding: 2px 6px; border-radius: var(--radius-full); background: var(--color-primary-400); color: #fff; font: var(--font-weight-semibold) 0.625rem/1.4 var(--font-sans); letter-spacing: 0.03em; text-transform: uppercase;">New</span>
+                          </sc-if>
+                        </button>
+                      </div>
+                    </sc-if>
+                  </div>
+                  <div style="display: flex; justify-content: center;">
+                    <span style="font: var(--font-weight-semibold) 1rem/1 var(--font-sans); color: var(--color-info-400);">View all screens</span>
+                  </div>
+                </div>
+                <div style="flex-shrink: 0; display: flex; align-items: center; padding: 12px 16px; border-top: 1px solid var(--border-subtle);">
+                  <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Button" variant="secondary" intent="neutral" hint-size="90px,40px">Cancel</x-import>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isRule }}">
+              <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
+                <div style="flex: 1; min-height: 0; overflow: auto; padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+                  <div style="border: 1px solid var(--border-subtle); border-radius: var(--radius-large); box-shadow: var(--elevation-01); padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <span style="font: var(--font-weight-semibold) 1.0625rem/1.2 var(--font-sans); color: var(--text-primary);">Completion rule</span>
+                      <i class="ti ti-chevron-up" style="font-size: 18px; color: var(--icon-secondary);"></i>
+                    </div>
+                    <span style="font: var(--font-weight-regular) 0.875rem/1.5 var(--font-sans); color: var(--text-secondary); text-wrap: pretty;">Mirror users can take these actions to move to the next screen in the workflow.</span>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                      <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleClick }}" on-change="{{ toggleClick }}" label="On a mouse click" hint-size="100%,22px"></x-import>
+                      <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleEnter }}" on-change="{{ toggleEnter }}" label="On pressing 'Enter' on the keyboard" hint-size="100%,22px"></x-import>
+                      <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleFields }}" on-change="{{ toggleFields }}" label="On completing the mandatory fields" hint-size="100%,22px"></x-import>
+                      <sc-if value="{{ ruleFields }}">
+                        <div style="margin-left: 28px; display: flex; flex-direction: column; gap: 8px;">
+                          <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="font: var(--font-weight-semibold) 0.75rem/1 var(--font-sans); letter-spacing: 0.03em; text-transform: uppercase; color: var(--text-tertiary);">Fields</span>
+                            <i class="ti ti-info-circle" title="Mandatory fields detected on this screen. They are read-only here." style="font-size: 15px; color: var(--icon-secondary); cursor: help;"></i>
+                          </div>
+                          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <sc-for list="{{ fields }}" as="f" hint-placeholder-count="3">
+                              <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--radius-full); background: var(--surface-sunken); border: 1px solid var(--border-subtle); font: var(--font-weight-medium) 0.875rem/1 var(--font-sans); color: var(--text-primary); white-space: nowrap;">{{ f.name }}</span>
+                            </sc-for>
+                          </div>
+                          <span style="font: var(--font-weight-regular) 0.8125rem/1.5 var(--font-sans); color: var(--text-tertiary);">Detected from the captured screen.</span>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </div>
+                  <sc-if value="{{ noRule }}">
+                    <div style="display: flex; gap: 10px; padding: 12px; border-radius: var(--radius-medium); background: var(--color-warning-50); border: 1px solid var(--color-warning-200);">
+                      <i class="ti ti-alert-circle" style="font-size: 18px; color: var(--color-warning-500);"></i>
+                      <span style="font: var(--font-weight-regular) 0.8125rem/1.5 var(--font-sans); color: var(--color-warning-600);">Pick at least one action, or this screen can never be completed.</span>
+                    </div>
+                  </sc-if>
+                </div>
+                <div style="flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 12px 16px; border-top: 1px solid var(--border-subtle);">
+                  <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Button" variant="secondary" intent="neutral" hint-size="90px,40px">Cancel</x-import>
+                  <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Button" variant="primary" intent="primary" hint-size="90px,40px">Save rule</x-import>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}">
+    <div style="width: 1280px; flex-shrink: 0; display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; box-sizing: border-box; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-medium); box-shadow: var(--elevation-01);">
+      <span style="width: 26px; height: 26px; flex-shrink: 0; border-radius: var(--radius-full); background: var(--color-primary-50); color: var(--color-primary-400); display: inline-flex; align-items: center; justify-content: center; font: var(--font-weight-bold) 0.8125rem/1 var(--font-mono);">{{ step }}</span>
+      <div style="display: flex; flex-direction: column; gap: 3px;">
+        <span style="font: var(--font-weight-semibold) 0.9375rem/1.3 var(--font-sans); color: var(--text-primary);">{{ captionTitle }}</span>
+        <span style="font: var(--font-weight-regular) 0.875rem/1.5 var(--font-sans); color: var(--text-secondary); text-wrap: pretty;">{{ captionBody }}</span>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1340,&quot;height&quot;:1020},&quot;showHotspots&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showCaptions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;ruleEntryLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Add completion rule&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;markNew&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const STEPS = [
+  { n: 1, label: 'Workflows', title: 'Pick a workflow simulation', body: 'The Mirror panel lists every simulation in this account. Nothing changes here — click "Test Capture sync" to open it.' },
+  { n: 2, label: 'Screens', title: 'The workflow expands into its screens', body: 'Screen cards, in capture order. Hover the pencil on a card — the "Edit" tooltip appears on hover only — then click it.' },
+  { n: 3, label: 'Screen opens', title: 'The edit screen opens — card actions move into an overflow', body: 'The link and pencil icons on the screen card are replaced by one kebab holding add link, edit, and the new completion rule. Click it.' },
+  { n: 4, label: 'Completion rule', title: 'Define when this screen counts as done', body: 'Multiple actions can be selected. Picking mandatory fields reveals the fields detected on the screen — read-only here.' },
+];
+
+class Component extends DCLogic {
+  state = { step: 1, menuOpen: false, hoverEdit: false, ruleClick: true, ruleEnter: false, ruleFields: false, fields: ['Name', 'Title', 'Phone'] };
+
+  go = (n) => this.setState({ step: Math.min(4, Math.max(1, n)), menuOpen: false, hoverEdit: false });
+
+  renderVals() {
+    const s = this.state.step;
+    const step = STEPS[s - 1];
+    const hot = this.props.showHotspots ?? true;
+    const pulse = hot ? 'hotspotPulse 1.6s ease-in-out infinite' : 'none';
+    const noRule = !this.state.ruleClick && !this.state.ruleEnter && !this.state.ruleFields;
+
+    return {
+      step: s,
+      steps: STEPS.map((st) => ({
+        n: st.n, label: st.label, go: () => this.go(st.n),
+        bg: st.n === s ? 'var(--color-primary-400)' : 'var(--surface-card)',
+        fg: st.n === s ? '#fff' : 'var(--text-secondary)',
+      })),
+      next: () => this.setState((st) => ({ step: Math.min(4, st.step + 1), menuOpen: false, hoverEdit: false })),
+      back: () => this.setState((st) => ({ step: Math.max(1, st.step - 1), menuOpen: false, hoverEdit: false })),
+
+      isStudio: s <= 2,
+      isEditor: s >= 3,
+      s1: s === 1,
+      panelScreens: s === 2,
+      editorPanel: s >= 3,
+      isEditorCard: s === 3,
+      isRule: s === 4,
+      panelTitle: 'Mirror',
+      hoverEdit: s === 2 && this.state.hoverEdit,
+      hoverEditOn: () => this.setState({ hoverEdit: true }),
+      hoverEditOff: () => this.setState({ hoverEdit: false }),
+      menuOpen: s === 3 && this.state.menuOpen,
+
+      overflowBg: s === 3 && !this.state.menuOpen ? 'var(--color-primary-400)' : 'transparent',
+      overflowFg: s === 3 && !this.state.menuOpen ? '#fff' : 'var(--icon-primary)',
+      overflowPulse: s === 3 && !this.state.menuOpen ? pulse : 'none',
+      fabPulse: s === 2 || s === 3 ? pulse : 'none',
+
+      workflowRows: ['testing', 'New_test', 'test wiki', 'test new sync', 'Test Capture sync', 'test 3', 'Input test 2'].map((name) => ({
+        name,
+        bg: name === 'Test Capture sync' ? 'var(--color-info-50)' : 'var(--surface-card)',
+        mark: name === 'Test Capture sync' ? 'inset 3px 0 0 0 var(--color-info-400)' : 'none',
+      })),
+      panelWorkflows: ['testing', 'New_test', 'test wiki', 'test new sync', 'Test Capture sync', 'test 3', 'Input test 2'].map((name) => ({
+        name,
+        bg: name === 'Test Capture sync' ? 'var(--color-primary-50)' : 'transparent',
+        open: () => this.go(2),
+      })),
+
+      openEditor: () => this.go(3),
+      toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
+      openRule: () => this.setState({ step: 4, menuOpen: false }),
+
+      ruleLabel: this.props.ruleEntryLabel ?? 'Add completion rule',
+      markNew: this.props.markNew ?? true,
+      ruleClick: this.state.ruleClick,
+      ruleEnter: this.state.ruleEnter,
+      ruleFields: this.state.ruleFields,
+      noRule,
+      toggleClick: () => this.setState((st) => ({ ruleClick: !st.ruleClick })),
+      toggleEnter: () => this.setState((st) => ({ ruleEnter: !st.ruleEnter })),
+      toggleFields: () => this.setState((st) => ({ ruleFields: !st.ruleFields })),
+      fields: this.state.fields.map((name) => ({ name })),
+
+      studioTabs: [{ value: 'Draft', label: 'Draft' }, { value: 'Ready', label: 'Ready' }, { value: 'Production', label: 'Production' }],
+      showCaptions: this.props.showCaptions ?? true,
+      captionTitle: step.title,
+      captionBody: step.body,
+    };
+  }
+}
+</script>
+</body>
+</html>

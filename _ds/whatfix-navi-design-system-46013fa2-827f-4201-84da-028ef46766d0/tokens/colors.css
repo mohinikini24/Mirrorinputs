@@ -1,0 +1,161 @@
+/* ============================================================
+   Whatfix Navi — Color tokens
+   Base palettes → semantic aliases. Values transcribed verbatim
+   from the Navi Design System Figma (Color page).
+   ============================================================ */
+
+:root {
+  /* ---- Primitive ---- */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* ---- Primary / Orange (brand CTA scale) ----
+     Primary-400 (#C74900) is the core call-to-action orange. */
+  --color-primary-50:  #FFF8F5;
+  --color-primary-100: #FEE2D6;
+  --color-primary-200: #F58857;
+  --color-primary-300: #E45913;
+  --color-primary-400: #C74900;
+  --color-primary-500: #9E4100;
+  --color-primary-600: #873B00;
+
+  /* Extended Orange (brand moments) */
+  --color-orange-100: #FFE9DC;
+  --color-orange-200: #FFC89C;
+  --color-orange-300: #FFA450;
+  --color-orange-400: #FF6B18;
+  --color-orange-500: #F55800;
+  --color-orange-600: #8F2B00;
+  --color-orange-700: #5C1800;
+
+  /* ---- Secondary / Neutral (derived from Inkredible) ---- */
+  --color-secondary-0:    #FCFCFD;
+  --color-secondary-50:   #F6F6F9;
+  --color-secondary-100:  #F2F2F8;
+  --color-secondary-200:  #ECECF3;
+  --color-secondary-300:  #DFDDE7;
+  --color-secondary-400:  #8C899F;
+  --color-secondary-500:  #797791;
+  --color-secondary-600:  #6B697B;
+  --color-secondary-700:  #525066;
+  --color-secondary-800:  #3D3C52;
+  --color-secondary-900:  #2B2B40;
+  --color-secondary-1000: #1F1F32; /* Inkredible — brand ink */
+
+  /* ---- Brand accents (sparingly, for impact) ---- */
+  --color-crimson-100: #FAF0F0;
+  --color-crimson-200: #FCD4D6;
+  --color-crimson-300: #FAB2B7;
+  --color-crimson-400: #F68487;
+  --color-crimson-500: #F05663;
+  --color-crimson-600: #872345;
+  --color-crimson-700: #5D182D;
+
+  --color-brightblue-100: #F2F8FD;
+  --color-brightblue-200: #E1EEFA;
+  --color-brightblue-300: #C8E3FA;
+  --color-brightblue-400: #B6D1F0;
+  --color-brightblue-500: #7AB0E2;
+  --color-brightblue-600: #287ACC;
+  --color-brightblue-700: #1D5FA5;
+
+  --color-human-100: #FCD5C5;
+  --color-human-200: #FAC1AA;
+  --color-human-300: #DB9C77;
+  --color-human-400: #BF7357;
+  --color-human-500: #824E3B;
+  --color-human-600: #572F20;
+  --color-human-700: #2E170F;
+
+  /* ---- Semantic / Intent ---- */
+  /* Critical — "Scare-let" (error / danger) */
+  --color-critical-50:  #FFF0F3;
+  --color-critical-100: #FED6DD;
+  --color-critical-200: #F6566B;
+  --color-critical-300: #E31429;
+  --color-critical-400: #B3141D;
+  --color-critical-500: #8E1014;
+  --color-critical-600: #750A0A;
+
+  /* Warning — "Yell-uh-oh" */
+  --color-warning-50:  #FEFBEB;
+  --color-warning-100: #FEF7D6;
+  --color-warning-200: #F6D860;
+  --color-warning-300: #F4B31A;
+  --color-warning-400: #E0A400;
+  --color-warning-500: #AD7900;
+  --color-warning-600: #976C07;
+  --color-warning-700: #724F04;
+
+  /* Success — "SuccesSage" */
+  --color-success-50:  #F6FEFB;
+  --color-success-100: #D9FBEE;
+  --color-success-200: #6CEABA;
+  --color-success-300: #24DB92;
+  --color-success-400: #21AD73;
+  --color-success-500: #198558;
+  --color-success-600: #106A40;
+  --color-success-700: #0C5532;
+
+  /* Info — "Knowledgablue" */
+  --color-info-50:  #F0F9FF;
+  --color-info-100: #D7EFFE;
+  --color-info-200: #7EC7FC;
+  --color-info-300: #2E9EFA;
+  --color-info-400: #0975D7;
+  --color-info-500: #0D59AB;
+  --color-info-600: #033D84;
+
+  /* ============================================================
+     Semantic aliases — reference these in components.
+     ============================================================ */
+
+  /* Text */
+  --text-primary:    var(--color-secondary-1000); /* headings, body ink */
+  --text-secondary:  var(--color-secondary-700);
+  --text-tertiary:   var(--color-secondary-600);
+  --text-placeholder:var(--color-secondary-400);
+  --text-disabled:   var(--color-secondary-400);
+  --text-on-fill:    var(--color-white);
+  --text-link:       var(--color-primary-400);
+  --text-link-hover: var(--color-primary-500);
+  --text-critical:   var(--color-critical-400);
+  --text-success:    var(--color-success-600);
+  --text-warning:    var(--color-warning-600);
+  --text-info:       var(--color-info-500);
+
+  /* Surfaces / backgrounds */
+  --surface-page:    var(--color-white);
+  --surface-subtle:  var(--color-secondary-50);
+  --surface-sunken:  var(--color-secondary-100);
+  --surface-card:    var(--color-white);
+  --surface-nav:     var(--color-secondary-1000); /* dark nav chrome */
+  --surface-primary: var(--color-primary-50);
+  --surface-hover:   var(--color-secondary-100);
+  --surface-selected:var(--color-primary-50);
+
+  /* Borders */
+  --border-subtle:   var(--color-secondary-200);
+  --border-default:  var(--color-secondary-300);
+  --border-strong:   var(--color-secondary-400);
+  --border-focus:    var(--color-info-400);
+  --border-primary:  var(--color-primary-400);
+
+  /* Icon */
+  --icon-primary:   var(--color-secondary-700);
+  --icon-secondary: var(--color-secondary-400);
+  --icon-on-fill:   var(--color-white);
+  --icon-brand:     var(--color-primary-400);
+
+  /* Interactive — primary button */
+  --action-primary:        var(--color-primary-400);
+  --action-primary-hover:  var(--color-primary-500);
+  --action-primary-active: var(--color-primary-600);
+  --action-primary-disabled: var(--color-secondary-200);
+
+  /* Status backgrounds (badges / banners) */
+  --status-success-bg: var(--color-success-100);
+  --status-warning-bg: var(--color-warning-100);
+  --status-critical-bg:var(--color-critical-100);
+  --status-info-bg:    var(--color-info-100);
+}

@@ -1,0 +1,54 @@
+/* ============================================================
+   Whatfix Navi — Typography tokens
+   Family: Inter (UI), Roboto Mono (code/metrics).
+   Scales transcribed from the Navi Typography page.
+   ============================================================ */
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Weights */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ---- Heading scale (Inter Bold) ---- */
+  --text-heading-01-size: 2.125rem; /* 34px */  --text-heading-01-lh: 42px;
+  --text-heading-02-size: 1.875rem; /* 30px */  --text-heading-02-lh: 38px;
+  --text-heading-03-size: 1.625rem; /* 26px */  --text-heading-03-lh: 34px;
+  --text-heading-04-size: 1.5rem;   /* 24px */  --text-heading-04-lh: 32px;
+  --text-heading-05-size: 1.375rem; /* 22px */  --text-heading-05-lh: 30px;
+  --text-heading-06-size: 1.25rem;  /* 20px */  --text-heading-06-lh: 28px;
+
+  /* ---- Subheading scale (Inter Semibold) ---- */
+  --text-subheading-01-size: 1.5rem;   /* 24px */ --text-subheading-01-lh: 32px;
+  --text-subheading-02-size: 1.375rem; /* 22px */ --text-subheading-02-lh: 30px;
+  --text-subheading-03-size: 1.25rem;  /* 20px */ --text-subheading-03-lh: 28px;
+  --text-subheading-04-size: 1.125rem; /* 18px */ --text-subheading-04-lh: 26px;
+  --text-subheading-05-size: 1rem;     /* 16px */ --text-subheading-05-lh: 24px;
+  --text-subheading-06-size: 0.875rem; /* 14px */ --text-subheading-06-lh: 20px;
+
+  /* ---- Body scale (Inter Regular) ---- */
+  --text-body-01-size: 1.125rem; /* 18px */ --text-body-01-lh: 28px;
+  --text-body-02-size: 1rem;     /* 16px */ --text-body-02-lh: 24px;
+  --text-body-03-size: 0.875rem; /* 14px */ --text-body-03-lh: 20px;
+  --text-body-04-size: 0.75rem;  /* 12px */ --text-body-04-lh: 16px;
+
+  /* Label / caption */
+  --text-label-size: 0.75rem; /* 12px, tracked, uppercase-ish */
+  --text-label-lh: 16px;
+  --text-label-tracking: 0.03em;
+}
+
+/* ---- Utility classes (optional convenience) ---- */
+.navi-h1 { font: var(--font-weight-bold) var(--text-heading-01-size)/var(--text-heading-01-lh) var(--font-sans); color: var(--text-primary); letter-spacing: -0.01em; margin: 0; }
+.navi-h2 { font: var(--font-weight-bold) var(--text-heading-02-size)/var(--text-heading-02-lh) var(--font-sans); color: var(--text-primary); letter-spacing: -0.01em; margin: 0; }
+.navi-h3 { font: var(--font-weight-bold) var(--text-heading-03-size)/var(--text-heading-03-lh) var(--font-sans); color: var(--text-primary); margin: 0; }
+.navi-h4 { font: var(--font-weight-bold) var(--text-heading-04-size)/var(--text-heading-04-lh) var(--font-sans); color: var(--text-primary); margin: 0; }
+.navi-subheading { font: var(--font-weight-semibold) var(--text-subheading-04-size)/var(--text-subheading-04-lh) var(--font-sans); color: var(--text-primary); margin: 0; }
+.navi-body { font: var(--font-weight-regular) var(--text-body-02-size)/var(--text-body-02-lh) var(--font-sans); color: var(--text-primary); margin: 0; }
+.navi-body-sm { font: var(--font-weight-regular) var(--text-body-03-size)/var(--text-body-03-lh) var(--font-sans); color: var(--text-secondary); margin: 0; }
+.navi-label { font: var(--font-weight-bold) var(--text-label-size)/var(--text-label-lh) var(--font-sans); letter-spacing: var(--text-label-tracking); color: var(--text-secondary); margin: 0; }
+.navi-mono { font-family: var(--font-mono); }

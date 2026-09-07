@@ -1,0 +1,21 @@
+/* ============================================================
+   Whatfix Navi Design System — global CSS entry point.
+   Consumers link THIS file. It is a manifest of @imports only.
+   ============================================================ */
+
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+
+/* Base reset applied by consumers who opt in via .navi-root */
+.navi-root {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  font-size: var(--text-body-02-size);
+  line-height: var(--text-body-02-lh);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--text-link); text-decoration: none; }
+a:hover { color: var(--text-link-hover); text-decoration: underline; }

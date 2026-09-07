@@ -1,0 +1,44 @@
+/* ============================================================
+   Whatfix Navi — Spacing, radius, border & elevation tokens
+   ============================================================ */
+
+:root {
+  /* ---- Spacing (4px base) ---- */
+  --space-0:  0;
+  --space-1:  0.125rem; /* 2px  */
+  --space-2:  0.25rem;  /* 4px  */
+  --space-3:  0.5rem;   /* 8px  */
+  --space-4:  0.75rem;  /* 12px */
+  --space-5:  1rem;     /* 16px */
+  --space-6:  1.25rem;  /* 20px */
+  --space-7:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-9:  2.5rem;   /* 40px */
+  --space-10: 3rem;     /* 48px */
+  --space-11: 4rem;     /* 64px */
+
+  /* ---- Border radius ---- */
+  --radius-none:   0px;
+  --radius-small:  4px;   /* 0.25rem — checkboxes, buttons, small elements */
+  --radius-medium: 8px;   /* 0.5rem  — inputs, cards, most UI elements */
+  --radius-large:  12px;  /* 0.75rem — dialogs, tags, modals, larger containers */
+  --radius-full:   36px;  /* 2.25rem — pills, circular icon backgrounds */
+  --radius-circle: 50%;
+
+  /* ---- Border widths ---- */
+  --border-width-none:   0px;
+  --border-width-small:  1px;
+  --border-width-medium: 2px;
+  --border-width-large:  4px;
+
+  /* ---- Elevation (shadows) ----
+     Transcribed from the Navi Elevation page. */
+  --elevation-01: 0px 2px 3px 0px rgba(0,0,0,0.16), 0px 4px 10px 0px rgba(0,0,0,0.12);          /* resting card */
+  --elevation-02: 0px 3px 6px 0px rgba(46,43,36,0.12), 0px 2px 4px 0px rgba(46,43,36,0.16);      /* tooltips, dropdowns */
+  --elevation-03: 0px 6px 20px 0px rgba(0,0,0,0.14), 0px 4px 12px 0px rgba(0,0,0,0.18);          /* popovers, menus */
+  --elevation-04: 0px 8px 26px 0px rgba(0,0,0,0.12), 0px 6px 20px 0px rgba(0,0,0,0.14);          /* drawers, panels */
+  --elevation-05: 0px 4px 24px 8px rgba(0,0,0,0.08), 0px 8px 24px 0px rgba(0,0,0,0.1), 0px 6px 18px 0px rgba(0,0,0,0.1); /* modals, overlays */
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-info-300);
+}
