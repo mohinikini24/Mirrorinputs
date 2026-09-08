@@ -309,11 +309,11 @@
                       <span style="font: var(--font-weight-semibold) 1.0625rem/1.2 var(--font-sans); color: var(--text-primary);">Completion rule</span>
                       <i class="ti ti-chevron-up" style="font-size: 18px; color: var(--icon-secondary);"></i>
                     </div>
-                    <span style="font: var(--font-weight-regular) 0.875rem/1.5 var(--font-sans); color: var(--text-secondary); text-wrap: pretty;">Mirror users can take these actions to move to the next screen in the workflow.</span>
+                    <span style="font: var(--font-weight-regular) 0.875rem/1.5 var(--font-sans); color: var(--text-secondary); text-wrap: pretty;">Mirror users can take these actions to move to the next screen. Optionally, require mandatory fields to be completed before either one counts.</span>
                     <div style="display: flex; flex-direction: column; gap: 14px;">
                       <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleClick }}" on-change="{{ toggleClick }}" label="On a mouse click" hint-size="100%,22px"></x-import>
                       <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleEnter }}" on-change="{{ toggleEnter }}" label="On pressing 'Enter' on the keyboard" hint-size="100%,22px"></x-import>
-                      <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleFields }}" on-change="{{ toggleFields }}" label="On completing the mandatory fields" hint-size="100%,22px"></x-import>
+                      <x-import component-from-global-scope="WhatfixNaviDesignSystem_46013f.Checkbox" checked="{{ ruleFields }}" on-change="{{ toggleFields }}" label="Mandatory fields must be completed before either action above applies" hint-size="100%,22px"></x-import>
                       <sc-if value="{{ ruleFields }}">
                         <div style="margin-left: 28px; display: flex; flex-direction: column; gap: 8px;">
                           <div style="display: flex; align-items: center; gap: 6px;">
